@@ -13,7 +13,6 @@ export class CurrentShowsComponent implements OnInit {
   constructor(private adminService: AdminService) { }
 
   ngOnInit(): void {
-    // Load current shows on component initialization
     this.loadCurrentShows();
   }
 

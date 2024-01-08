@@ -1,5 +1,5 @@
 <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
-    <!-- Movie details fields -->
+
     <label for="movieName">Movie Name</label>
     <input type="text" id="movieName" formControlName="movieName" required>
 
@@ -12,7 +12,6 @@
     <label for="description"> Description </label>
     <input type="text" id="description" formControlName="description" required>
 
-    <!-- Show timings section -->
     <label for="screenNumber"> Screen Number </label>
     <input type="text" id="screenNumber" formControlName="screenNumber" required>
 

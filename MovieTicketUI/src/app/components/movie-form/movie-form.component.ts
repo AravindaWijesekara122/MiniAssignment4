@@ -39,7 +39,6 @@ export class MovieFormComponent implements OnInit {
         (response) => {
           console.log('Movie added successfully:', response);
           this.movieForm.reset();
-          // Reset the form or navigate to another page as needed
         },
         (error) => {
           console.error('Failed to add movie:', error);

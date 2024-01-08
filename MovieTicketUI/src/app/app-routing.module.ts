@@ -6,8 +6,7 @@ import { CurrentShowsComponent } from './components/current-shows/current-shows.
 const routes: Routes = [
   { path: 'add-movie', component: MovieFormComponent },
   { path: 'current-shows', component: CurrentShowsComponent },
-  // Add more routes as needed
-  { path: '', redirectTo: '/current-shows', pathMatch: 'full' }, // Default route
+  { path: '', redirectTo: '/current-shows', pathMatch: 'full' },
 ];
 
 @NgModule({
