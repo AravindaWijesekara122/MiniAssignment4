@@ -1,0 +1,36 @@
+<form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+    <!-- Movie details fields -->
+    <label for="movieName">Movie Name</label>
+    <input type="text" id="movieName" formControlName="movieName" required>
+
+    <label for="genre">Genre</label>
+    <input type="text" id="genre" formControlName="genre" required>
+
+    <label for="director"> Director </label>
+    <input type="text" id="director" formControlName="director" required>
+
+    <label for="description"> Description </label>
+    <input type="text" id="description" formControlName="description" required>
+
+    <!-- Show timings section -->
+    <label for="screenNumber"> Screen Number </label>
+    <input type="text" id="screenNumber" formControlName="screenNumber" required>
+
+    <label for="timings">Timings</label>
+    <input type="text" id="timings" formControlName="timings" required>
+
+    <label for="startDate">Start Date</label>
+    <input type="date" id="startDate" formControlName="startDate" required>
+
+    <label for="endDate">End Date</label>
+    <input type="date" id="endDate" formControlName="endDate" required>
+
+    <label for="noOfSeatsAvailable">Number of Seats Available</label>
+    <input type="number" id="noOfSeatsAvailable" formControlName="noOfSeatsAvailable" required>
+
+    <label for="perPersonPrice">Per Person Price</label>
+    <input type="number" id="perPersonPrice" formControlName="perPersonPrice" required>
+
+    <button type="submit">Add Movie</button>
+
+</form>

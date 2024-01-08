@@ -1,0 +1,37 @@
+<p>current-shows works!</p>
+
+<div *ngIf="currentShows && currentShows.length > 0; else noShows">
+    <h2>Current Shows</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Movie Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Timings</th>
+                <th>No. of Seats</th>
+                <th>Per Person Price</th>
+                <th>Screen Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let show of currentShows">
+                <td>{{ show.movieName }}</td>
+                <td>{{ show.startDate | date:'medium' }}</td>
+                <td>{{ show.endDate | date:'medium' }}</td>
+                <td>{{ show.timings }}</td>
+                <td>{{ show.noOfSeats }}</td>
+                <td>{{ show.perPersonPrice }}</td>
+                <td>{{ show.screenNumber }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #noShows>
+    <p>No current shows available.</p>
+</ng-template>
+
+<p>
+    <a routerLink="/add-movie">Add Movie</a>
+</p>
