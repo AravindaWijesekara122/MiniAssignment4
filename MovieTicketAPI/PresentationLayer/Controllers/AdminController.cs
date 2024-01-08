@@ -30,7 +30,7 @@ namespace PresentationLayer.Controllers
                 // Call the movie service to add a movie
                 _movieService.AddMovie(movieDetailsDTO);
 
-                return Ok("Movie added successfully!");
+                return Ok(new { Message = "Movie added successfully!" });
             }
             catch (InvalidOperationException ex)
             {

@@ -44,7 +44,7 @@ namespace PresentationLayer.Controllers
                 //ticketDetailsDTO.TotalAmount = 
 
 
-                return Ok("Ticket booked successfully!");
+                return Ok(new { Message = "Ticket booked successfully!"});
             }
             catch (Exception ex)
             {

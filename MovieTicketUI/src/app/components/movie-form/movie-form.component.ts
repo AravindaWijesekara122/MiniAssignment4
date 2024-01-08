@@ -38,6 +38,7 @@ export class MovieFormComponent implements OnInit {
       this.adminService.addMovie(movieDetails).subscribe(
         (response) => {
           console.log('Movie added successfully:', response);
+          this.movieForm.reset();
           // Reset the form or navigate to another page as needed
         },
         (error) => {
