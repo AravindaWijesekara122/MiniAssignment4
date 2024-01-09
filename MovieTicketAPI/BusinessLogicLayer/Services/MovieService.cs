@@ -49,11 +49,37 @@ namespace BusinessLogicLayer.Services
             
         }
 
-        public IEnumerable<Show> GetAllShows(int movieId)
+        public IEnumerable<ShowDTO> GetAllShows(int movieId)
         {
-            return _dbContext.Shows
+            try
+            {
+                var movie = _dbContext.Movies.Find(movieId);
+
+                var shows = _dbContext.Shows
                 .Where(show => show.MovieId == movieId)
                 .ToList();
+
+                List<ShowDTO> result = new List<ShowDTO>();
+
+                foreach (var show in shows)
+                {
+                    ShowDTO showDTO = new ShowDTO();
+                    showDTO.MovieName = movie.MovieName;
+                    showDTO.StartDate = show.StartDate;
+                    showDTO.EndDate = show.EndDate;
+                    showDTO.Timings = show.Timings;
+                    showDTO.NoOfSeats = show.NoOfSeats;
+                    showDTO.PerPersonPrice = show.Price;
+                    showDTO.ScreenNumber = show.ScreenNumber;
+                    result.Add(showDTO);
+                }
+                return result;
+            }
+            catch(Exception ex)
+            {
+                throw new CustomException(ex.Message);
+            }
+            
         }
 
         public Show GetShow(int showId)
@@ -128,10 +154,6 @@ namespace BusinessLogicLayer.Services
                         // Include other relevant movie properties
                     })
                     .ToList();
-                if (moviesForDate.Count == 0)
-                {
-                    throw new CustomException("No movies found for selected date");
-                }
 
                 return moviesForDate;
             }

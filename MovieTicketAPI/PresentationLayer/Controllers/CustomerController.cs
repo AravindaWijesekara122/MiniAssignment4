@@ -67,6 +67,37 @@ namespace PresentationLayer.Controllers
             
         }
 
+
+        [HttpGet("selected-movies")]
+        public IActionResult GetMoviesForDate([FromQuery] DateTime selectedDate)
+        {
+            try
+            {
+                var movies = _movieService.GetMoviesForDate(selectedDate);
+                return Ok(movies);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("shows/{movieId}")]
+        public IActionResult GetAllShows(int movieId)
+        {
+            try
+            {
+                var shows = _movieService.GetAllShows(movieId);
+                return Ok(shows);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
+        }
+
+
         [HttpGet("tickets/{userId}")]
         public IActionResult GetTicketsForCustomer(int userId)
         {

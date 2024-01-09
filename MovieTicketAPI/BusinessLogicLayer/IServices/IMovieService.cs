@@ -13,7 +13,7 @@ namespace BusinessLogicLayer.IServices
         IEnumerable<Movie> GetAllMovies();
         Movie GetMovie(int ShowId);
         Show GetShow(int ShowId);
-        IEnumerable<Show> GetAllShows(int MovieId);
+        IEnumerable<ShowDTO> GetAllShows(int MovieId);
         void AddMovie(MovieDetailsDTO movieDetailsDTO);
         void DeleteMovie(int MovieId);
 

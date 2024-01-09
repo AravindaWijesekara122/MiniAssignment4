@@ -1,0 +1,24 @@
+<p>movie-list works!</p>
+
+<!-- movie-list.component.html -->
+<div>
+    <label for="selectedDate">Select Date:</label>
+    <input type="date" id="selectedDate" [(ngModel)]=selectedDate>
+    <button (click)="loadMovies()">Get Movies</button>
+</div>
+
+<div *ngIf="movies.length > 0; else noMovies">
+    <h2>Movies for {{ selectedDate }}</h2>
+    <div *ngFor="let movie of movies">
+        <h2>{{ movie.movieName }}</h2>
+        <p><strong>Genre:</strong> {{ movie.genre }}</p>
+        <p><strong>Director:</strong> {{ movie.director }}</p>
+        <p><strong>Description:</strong> {{ movie.description }}</p>
+        <button (click)="navigateToShowDetails(movie.movieId)">View Details</button>
+        <hr>
+    </div>
+</div>
+
+<ng-template #noMovies>
+    <p>No movies available.</p>
+</ng-template>

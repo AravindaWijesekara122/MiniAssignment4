@@ -1,0 +1,27 @@
+<p>show-list works!</p>
+
+<!-- movie-details.component.html -->
+
+  
+  <!-- movie-list.component.html -->
+<div *ngIf="showDetails && showDetails.length > 0; else noShows">
+    <div *ngFor="let show of showDetails">
+      <div>
+        <h3>{{ show.movieName }}</h3>
+        <p><strong>Start Date :</strong> {{ show.startDate }}</p>
+        <p><strong>End Date:</strong> {{ show.endDate }}</p>
+        <p><strong>Show Time:</strong> {{ show.timings }}</p>
+        <p><strong>No of Seats Available:</strong> {{ show.noOfSeats }}</p>
+        <p><strong>Per Person Price:</strong> {{ show.perPersonPrice }}</p>
+        <p><strong>Screen Number:</strong> {{ show.screenNumber }}</p>
+        <!-- Add more details as needed -->
+  
+        <!-- Add a button or link to navigate to the details page -->
+        
+      </div>
+    </div>
+  </div>
+  <ng-template #noShows>
+    <p>No shows available</p>
+  </ng-template>
+  
